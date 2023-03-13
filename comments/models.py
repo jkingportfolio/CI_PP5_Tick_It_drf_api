@@ -18,10 +18,10 @@ class Comment(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+    comment_body = models.TextField()
 
     class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
-        return self.content
+        return self.comment_body
