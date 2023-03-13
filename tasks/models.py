@@ -23,7 +23,9 @@ class Task(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=50, blank=True)
     title = models.CharField(max_length=255, blank=True)
-    priority = models.CharField(max_length=255, choices=PRIORITY_CHOICES, default='LOW')
+    priority = models.CharField(max_length=255,
+                                choices=PRIORITY_CHOICES,
+                                default='LOW')
     due_date = models.DateTimeField()
     files = models.FileField(blank=True)
     assigned_to = models.ForeignKey(User,
@@ -38,4 +40,4 @@ class Task(models.Model):
         """
         Return information of the Task
         """
-        return f"Task: {self.id}"
+        return f"Task: #{self.id}"
