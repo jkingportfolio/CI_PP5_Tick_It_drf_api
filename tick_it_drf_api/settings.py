@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'profiles',
     'tasks',
     'comments',
+    'watches',
 ]
 
 MIDDLEWARE = [
