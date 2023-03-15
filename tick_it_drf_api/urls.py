@@ -22,4 +22,6 @@ urlpatterns = [
     path('', include('profiles.urls')),
     path('', include('tasks.urls')),
     path('', include('comments.urls')),
+    path('', include('watches.urls')),
+    # path('', include('packs.urls')),
 ]
