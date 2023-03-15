@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'tasks',
     'comments',
     'watches',
+    'packs',
 ]
 
 MIDDLEWARE = [
