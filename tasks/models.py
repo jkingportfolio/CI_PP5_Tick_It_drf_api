@@ -16,7 +16,7 @@ class Task(models.Model):
         ('LOW', 'Low'),
     ]
 
-    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255, blank=True)
     task_body = models.TextField(blank=True)
