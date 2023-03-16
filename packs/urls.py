@@ -10,4 +10,5 @@ from packs import views
 
 urlpatterns = [
     path('packs/', views.PackList.as_view()),
+    path('packs/<int:pk>/', views.PackDetail.as_view())
 ]

@@ -10,7 +10,7 @@ from .models import Pack
 
 class PackSerializer(serializers.ModelSerializer):
     """
-    A class for a TaskSerializer
+    A class for a PackSerializer
     """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
@@ -42,3 +42,25 @@ class PackSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({
                 'detail': 'possible duplication'
             })
+
+
+class PackDetailSerializer(PackSerializer):
+    """
+    A class for a PackDetail Serializer for the
+    Pack model used in Detail view
+    """
+    pack = serializers.ReadOnlyField(source='pack.id')
+
+    class Meta:
+        model = Pack
+        fields = [
+            'id',
+            'is_owner',
+            'owner',
+            'created_on',
+            'title',
+            'pack_description',
+            'members',
+            'updated_on',
+            'pack'
+        ]
