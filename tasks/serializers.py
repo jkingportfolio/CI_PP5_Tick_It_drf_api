@@ -35,4 +35,6 @@ class TaskSerializer(serializers.ModelSerializer):
             'due_date',
             'files',
             'assigned_to',
+            'completed',
+            'pack',
         ]

@@ -3,6 +3,9 @@
 # 3rd party:
 from django.db import models
 from django.contrib.auth.models import User
+
+# Internal:
+from packs.models import Pack
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -32,6 +35,9 @@ class Task(models.Model):
                                     null=True,
                                     on_delete=models.SET_NULL,
                                     related_name='assigned_to')
+    completed = models.BooleanField(default=False, blank=True, null=True)
+    pack = models.ForeignKey(Pack, on_delete=models.CASCADE, blank=True,
+                             null=True)
 
     class Meta:
         ordering = ['due_date']
