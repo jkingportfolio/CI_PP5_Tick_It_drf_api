@@ -32,7 +32,11 @@ class ProfileList(generics.ListAPIView):
     ).order_by('-created_on')
     filter_backends = [
         filters.OrderingFilter,
-        DjangoFilterBackend
+        filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+    search_fields = [
+        'owner__username',
     ]
     ordering_fields = [
         'tasks_count',
@@ -52,7 +56,6 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
             'owner__watch',
             distinct=True)
     ).order_by('-created_on')
-
     # def get_object(self, pk):
     #     try:
     #         profile = Profile.objects.get(pk=pk)
