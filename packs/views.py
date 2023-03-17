@@ -21,9 +21,7 @@ class PackList(generics.ListCreateAPIView):
         ]
     queryset = Pack.objects.all()
     # filterset_fields = [
-    #     'owner__followed__owner__profile',
-    #     'likes__owner__profile',
-    #     'owner__profile',
+    #     'pack__tasks',
     # ]
 
     def perform_create(self, serializer):

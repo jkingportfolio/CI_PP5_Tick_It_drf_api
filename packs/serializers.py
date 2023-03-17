@@ -30,6 +30,7 @@ class PackSerializer(serializers.ModelSerializer):
             'pack_description',
             'members',
             'updated_on',
+            'tasks'
         ]
 
     def create(self, validated_data):
@@ -62,5 +63,6 @@ class PackDetailSerializer(PackSerializer):
             'pack_description',
             'members',
             'updated_on',
-            'pack'
+            'pack',
+            'tasks'
         ]
