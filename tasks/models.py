@@ -24,7 +24,6 @@ class Task(models.Model):
     title = models.CharField(max_length=255, blank=True)
     task_body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    name = models.CharField(max_length=50, blank=True)
     title = models.CharField(max_length=255, blank=True)
     priority = models.CharField(max_length=255,
                                 choices=PRIORITY_CHOICES,

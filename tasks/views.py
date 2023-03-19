@@ -19,8 +19,8 @@ class TaskList(generics.ListCreateAPIView):
         permissions.IsAuthenticatedOrReadOnly
     ]
     queryset = Task.objects.annotate(
-        comments_number=Count(
-            'comment',
+        comments_count=Count(
+            'comments',
             distinct=True
         ),
     ).order_by('-created_on')
@@ -51,8 +51,8 @@ class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TaskSerializer
 
     queryset = Task.objects.annotate(
-        comments_number=Count(
-            'comment',
+        comments_count=Count(
+            'comments',
             distinct=True
         ),
     ).order_by('-created_on')

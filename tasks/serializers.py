@@ -15,6 +15,7 @@ class TaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     comments_count = serializers.ReadOnlyField()
+    created_on = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -30,7 +31,6 @@ class TaskSerializer(serializers.ModelSerializer):
             'title',
             'task_body',
             'updated_on',
-            'name',
             'title',
             'priority',
             'due_date',
