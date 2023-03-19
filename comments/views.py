@@ -2,6 +2,7 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
 from rest_framework import generics, permissions
+from django_filters.rest_framework import DjangoFilterBackend
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Internal:
@@ -18,6 +19,11 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Comment.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = [
+        'task',  # get all comments for a specific post
+        'owner'  # get all comments by a specific user
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
