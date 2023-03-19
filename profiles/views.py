@@ -3,15 +3,13 @@
 # 3rd party:
 from django.db.models import Count
 from rest_framework import status, generics, filters
-from django.http import Http404
-from rest_framework.views import APIView
 from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Internal:
 from .models import Profile
 from .serializers import ProfileSerializer
 from tick_it_drf_api.permissions import IsOwnerOrReadOnly
-from django_filters.rest_framework import DjangoFilterBackend
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
