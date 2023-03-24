@@ -1,108 +1,196 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tick It API in DRF
 
-Welcome jkingportfolio,
+**Developer: Jamie King**
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+💻 [Live link](https://tick-it-pp5.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This repository contains the API set up using Django REST Framework for the Tick It front-end application ([repository here](https://github.com/jkingportfolio/ci_pp5_tick_it_react) and [live website here](https://tick-it-app-pp5.herokuapp.com/)
 
-## Gitpod Reminders
+## Table of Contents
+  - [User Stories](#user-stories)
+  - [Database](#database)
+  - [Technologies Used](#technologies-used)
+  - [Validation](#validation)
+  - [Testing](#testing)
+  - [Credits](#credits)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Stories
 
-`python3 -m http.server`
+The back-end section of the project focuses on its administration side and covers one user story:
+- As an admin, I want to be able to create, edit and delete users, tasks, packs, comments and watches, so that I can have control over the content of the application and also remove any potential inappropriate content.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Database
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The following models were created to represent the database model structure of the application:
+<img src="docs/readme/database-diagram.png">
 
-A blue button should appear to click: _Make Public_,
+#### User Model
 
-Another blue button should appear to click: _Open Browser_.
+- The User model contains information about the user. It is part of the Django allauth library.
+- One-to-one relation with 
+- ForeignKey relation with 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+#### Profile Model
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- The Profile model contains the following fields: owner, xx, xx and xxx
+- One-to-one relation between the xx and xx
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Task Model
 
-------
+- The Task model contains the following fields: owner, xx, xx and xx
+- ForeignKey relation with the xx
+- ForeignKey relation with the xx
 
-## Release History
+#### Watch Model
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- The Watch model contains the following fields: owner, xx and xx
+- ForeignKey relation between the xx and xx
+- ForeignKey relation between the xx and xx
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### Comment Model
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- The Comment model contains the following fields: xx, xx and xx
+- ForeignKey relation between the xx and xx
+- ForeignKey relation between the xx and xx
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+#### Pack Model
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- The Pack model contains the following fields: xx, xx and xx
+- ForeignKey relation between to the xx and xx
+- ForeignKey relation between the xx and xx
+- ForeignKey relation between the xx and xx
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+##### Back to [top](#table-of-contents)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Technologies Used
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Languages & Frameworks
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- Python
+- Django
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Libraries & Tools
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- [TOOL NAME](LINK) - DESCRIPTION
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+##### Back to [top](#table-of-contents)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Validation
 
-------
+### Python Validation
 
-## FAQ about the uptime script
+PEP8 was unavailable so used pycodestyle etc
 
-**Why have you added this script?**
+[Pycodestyle](LINK) - Description
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+## Testing
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+The following tests were carried out on the app:
+1. Manual testing of user stories
+2. Automated testing
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Manual testing of user stories
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- As an admin, I want to be able to create, edit and delete the users, posts, comments and likes, so that I can have a control over the content of the application and remove any potential inappropriate content
 
-**So….?**
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+User | Create, update & delete user | A user can be created, edited or deleted | Works as expected
+User | Change permissions | User permissions can be updated | Works as expected
+Profile | Create, update & delete | User profile can be created, edited or deleted | Works as expected
+Task | Create, update & delete | A Task can be created, edited or deleted | Works as expected
+Comment | Create, update & delete | A comment can be created, edited or deleted | Works as expected
+Watch | Create & delete | xxxxxxxxxxxxxxxxx | Works as expected
+Pack | Create & delete | xxxxxxxxxxxr | Works as expected
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+In addition, tasks, comments, packs and watches can be created by logged-in users only. Users can only update or delete the content which was created by themselves.
 
-**Can I opt out?**
+<details><summary>Screenshots - USER</summary>
+    <details><summary>Create user</summary>
+    <img src="docs/testing/user-create-test.png">
+    </details>
+    <details><summary>Change user permissions</summary>
+    <img src="docs/testing/user-change-permissions-test.png">
+    </details>
+</details>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+<details><summary>Screenshots - PROFILE</summary>
+    <details><summary>Update profile</summary>
+    <img src="docs/testing/profile-update-test.png">
+    </details>
+        <details><summary>Delete profile</summary>
+    <img src="docs/testing/profile-delete-test.png">
+    </details>
+</details>
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<details><summary>Screenshots - TASK</summary>
+    <details><summary>Create task</summary>
+    <img src="docs/testing/task-create-test.png">
+    </details>
+    <details><summary>Update task</summary>
+    <img src="docs/testing/task-update-test.png">
+    </details>
+    <details><summary>Delete task</summary>
+    <img src="docs/testing/task-delete-test.png">
+    </details>
+</details>
 
-**Anything more?**
+<details><summary>Screenshots - COMMENT</summary>
+    <details><summary>Create comment</summary>
+    <img src="docs/testing/comment-create-test.png">
+    </details>
+    <details><summary>Update comment</summary>
+    <img src="docs/testing/comment-update-test.png">
+    </details>
+    <details><summary>Delete comment</summary>
+    <img src="docs/testing/comment-delete-test.png">
+    </details>
+</details>
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<details><summary>Screenshots - PACK</summary>
+    <details><summary>Create pack</summary>
+    <img src="docs/testing/pack-create-test.png">
+    </details>
+    <details><summary>Delete pack</summary>
+    <img src="docs/testing/pack-delete-test.png">
+    </details>
+</details>
 
----
+<details><summary>Screenshots - WATCH</summary>
+    <details><summary>Create - Watch Task</summary>
+    <img src="docs/testing/watch-create-test.png">
+    </details>
+    <details><summary>Delete - UnWatch Task</summary>
+    <img src="docs/testing/watch-delete-test.png">
+    </details>
+</details>
 
-Happy coding!
+
+### Automated testing
+
+Automated testing was done using the Django Rest Framework APITestCase. The report of overall testing was produced using the coverage tool (```$ coverage report``` & ```$ coverage html``` commands)
+
+- Tests summary
+
+<img src="docs/testing/apitestcase-tickit.png">
+
+<details><summary>Detailed coverage report</summary>
+<img src="docs/testing/coverage-report-tickit.jpg">
+</details>
+
+##### Back to [top](#table-of-contents)
+
+
+## Credits
+
+
+### Code
+
+This project was created based on the Code Institute's Django REST API walkthrough project ['Moments'](https://github.com/Code-Institute-Solutions/drf-api).
+
+##### Back to [top](#table-of-contents)
