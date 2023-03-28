@@ -28,7 +28,7 @@ class Task(models.Model):
     priority = models.CharField(max_length=255,
                                 choices=PRIORITY_CHOICES,
                                 default='LOW')
-    due_date = models.DateTimeField()
+    due_date = models.DateField()
     files = models.FileField(blank=True)
     assigned_to = models.ForeignKey(User,
                                     null=True,
