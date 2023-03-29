@@ -18,10 +18,23 @@ class TaskSerializer(serializers.ModelSerializer):
     created_on = serializers.ReadOnlyField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    watching_id = serializers.SerializerMethodField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
+
+    def get_watching_id(self, obj):
+        """
+        Check if the logged-in user is watching any taks
+        """
+        user = self.context['request'].user
+        if user.is_authenticated:
+            watching = Watches.objects.filter(
+                owner=user, followed=obj.owner
+            ).first()
+            return watching.id if watching else None
+        return None
 
     class Meta:
         model = Task
@@ -42,4 +55,5 @@ class TaskSerializer(serializers.ModelSerializer):
             'comments_count',
             'profile_id',
             'profile_image',
+            'watching_id',
         ]
