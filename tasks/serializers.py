@@ -16,6 +16,7 @@ class TaskSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     comments_count = serializers.ReadOnlyField()
     created_on = serializers.ReadOnlyField()
+    profile_image = serializers.ReadOnlyField(source='owner.image.url')
 
     def get_is_owner(self, obj):
         request = self.context['request']
