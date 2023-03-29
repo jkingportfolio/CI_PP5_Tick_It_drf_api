@@ -32,7 +32,7 @@ class TaskSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
         if user.is_authenticated:
             watching = Watch.objects.filter(
-                owner=user, followed=obj.owner
+                owner=user, task=obj
             ).first()
             return watching.id if watching else None
         return None
