@@ -40,4 +40,6 @@ class TaskSerializer(serializers.ModelSerializer):
             'completed',
             'pack',
             'comments_count',
+            'profile_id',
+            'profile_image',
         ]
