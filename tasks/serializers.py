@@ -5,6 +5,7 @@ from rest_framework import serializers
 
 # Internal:
 from .models import Task
+from watches.models import Watch
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -30,7 +31,7 @@ class TaskSerializer(serializers.ModelSerializer):
         """
         user = self.context['request'].user
         if user.is_authenticated:
-            watching = Watches.objects.filter(
+            watching = Watch.objects.filter(
                 owner=user, followed=obj.owner
             ).first()
             return watching.id if watching else None
