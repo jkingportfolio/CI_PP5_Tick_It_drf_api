@@ -38,7 +38,7 @@ class TaskList(generics.ListCreateAPIView):
         'pack'
     ]
     filterset_fields = [
-        'owner__watches__owner__profile',
+        'watches__owner__profile',
         'owner__profile',
     ]
 
