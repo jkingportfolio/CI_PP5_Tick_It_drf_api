@@ -38,8 +38,8 @@ class TaskList(generics.ListCreateAPIView):
         'pack'
     ]
     filterset_fields = [
-        'owner__profile',  # return posts owned by a specific user
-        'pack',  # return tasks associated to a specific pack
+        'owner__watches__owner__profile',
+        'owner__profile',
     ]
 
     def perform_create(self, serializer):

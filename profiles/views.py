@@ -40,10 +40,10 @@ class ProfileList(generics.ListAPIView):
         'tasks_count',
         'watching_count',
     ]
-    filterset_fields = [
-        'owner__following__followed__profile',
-        'owner__followed__owner__profile',
-    ]
+    # filterset_fields = [
+    #     'owner__following__followed__profile',
+    #     'owner__followed__owner__profile',
+    # ]
 
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
