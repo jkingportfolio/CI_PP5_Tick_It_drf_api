@@ -35,7 +35,6 @@ class TaskList(generics.ListCreateAPIView):
     search_fields = [
         'owner__username',
         'title',
-        'pack'
     ]
     filterset_fields = [
         'watches__owner__profile',
