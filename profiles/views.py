@@ -5,6 +5,8 @@ from django.db.models import Count
 from rest_framework import status, generics, filters
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.views import APIView
+from django.contrib.auth.models import User
 
 # Internal:
 from .models import Profile
@@ -40,10 +42,6 @@ class ProfileList(generics.ListAPIView):
         'tasks_count',
         'watching_count',
     ]
-    # filterset_fields = [
-    #     'owner__following__followed__profile',
-    #     'owner__followed__owner__profile',
-    # ]
 
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -58,3 +56,9 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
             'owner__watch',
             distinct=True)
     ).order_by('-created_on')
+
+
+class UserList(APIView):
+    def get(self, request):
+        users = User.objects.all().values()
+        return Response(users)

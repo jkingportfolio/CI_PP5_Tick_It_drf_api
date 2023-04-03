@@ -22,7 +22,7 @@ class CommentList(generics.ListCreateAPIView):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = [
         'task',  # get all comments for a specific post
-        'owner'  # get all comments by a specific user
+        'owner',  # get all comments by a specific user
     ]
 
     def perform_create(self, serializer):
