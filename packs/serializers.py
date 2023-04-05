@@ -68,5 +68,7 @@ class PackDetailSerializer(PackSerializer):
             'members',
             'updated_on',
             'pack',
-            'tasks'
+            'tasks',
+            'profile_id',
+            'profile_image',
         ]
