@@ -20,9 +20,21 @@ class PackList(generics.ListCreateAPIView):
         permissions.IsAuthenticatedOrReadOnly
         ]
     queryset = Pack.objects.all()
-    # filterset_fields = [
-    #     'pack__tasks',
-    # ]
+    filterset_fields = [
+        'pack__tasks',
+    ]
+    filter_backends = [
+        filters.OrderingFilter,
+        filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+    search_fields = [
+        'owner__username',
+        'title',
+    ]
+    filterset_fields = [
+        'owner__profile',
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
