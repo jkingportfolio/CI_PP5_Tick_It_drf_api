@@ -20,6 +20,8 @@ class TaskSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     watching_id = serializers.SerializerMethodField()
+    pack = serializers.PrimaryKeyRelatedField(source='task.pack',
+                                              allow_null=True)
 
     def get_is_owner(self, obj):
         request = self.context['request']
