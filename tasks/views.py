@@ -39,6 +39,7 @@ class TaskList(generics.ListCreateAPIView):
     filterset_fields = [
         'watches__owner__profile',
         'owner__profile',
+        'assigned_to__owner__profile',
     ]
 
     def perform_create(self, serializer):
