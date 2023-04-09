@@ -34,13 +34,12 @@ class Task(models.Model):
     priority = models.CharField(max_length=255,
                                 choices=PRIORITY_CHOICES,
                                 default='LOW')
-    due_date = models.DateField(blank=True, null=True)
+    due_date = models.DateField(blank=True, null=True, default="No due date")
     files = models.FileField(blank=True)
     assigned_to = models.ForeignKey(User,
                                     null=True,
                                     on_delete=models.SET_NULL,
                                     related_name='assigned_to')
-    # completed = models.BooleanField(default=False, blank=True, null=True)
     completed = models.CharField(max_length=255,
                                  choices=COMPLETION_STATUS,
                                  default='NO')
