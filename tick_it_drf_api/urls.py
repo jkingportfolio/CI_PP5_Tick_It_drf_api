@@ -30,4 +30,5 @@ urlpatterns = [
     path('', include('comments.urls')),
     path('', include('watches.urls')),
     path('', include('packs.urls')),
+    path('', include('contact.urls')),
 ]
