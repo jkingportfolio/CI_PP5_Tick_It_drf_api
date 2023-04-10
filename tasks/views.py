@@ -35,10 +35,12 @@ class TaskList(generics.ListCreateAPIView):
     search_fields = [
         'owner__username',
         'title',
+        'completed',
     ]
     filterset_fields = [
         'watches__owner__profile',
         'owner__profile',
+        'completed',
     ]
 
     def perform_create(self, serializer):
