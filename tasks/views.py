@@ -41,6 +41,7 @@ class TaskList(generics.ListCreateAPIView):
         'watches__owner__profile',
         'owner__profile',
         'completed',
+        'priority',
     ]
 
     def perform_create(self, serializer):
