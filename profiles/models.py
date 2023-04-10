@@ -16,7 +16,7 @@ class Profile(models.Model):
     """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, blank=True)
-    job_role = models.TextField(blank=True)
+    job_role = models.TextField(blank=True, default="New employee")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     image = models.ImageField(
