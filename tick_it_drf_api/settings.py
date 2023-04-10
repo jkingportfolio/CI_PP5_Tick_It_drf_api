@@ -97,6 +97,7 @@ INSTALLED_APPS = [
     'comments',
     'watches',
     'packs',
+    'contact',
 ]
 SITE_ID = 1
 MIDDLEWARE = [
