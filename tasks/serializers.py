@@ -16,7 +16,7 @@ class TaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     comments_count = serializers.ReadOnlyField()
-    created_on = serializers.ReadOnlyField()
+    created_on = serializers.DateField(format='%Y/%m/%d')
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     watching_id = serializers.SerializerMethodField()
