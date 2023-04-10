@@ -10,7 +10,7 @@ from .models import Contact
 
 class ContactSerializer(serializers.ModelSerializer):
     """
-    A class for a TaskSerializer
+    A class for a ContactSerializer
     """
     reason = serializers.ReadOnlyField()
     name = serializers.ReadOnlyField()
