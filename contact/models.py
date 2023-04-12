@@ -12,32 +12,30 @@ class Contact(models.Model):
     """
     A class for the contact model
     """
-    class Reason(models.TextChoices):
-        """
-        Contact reason options
-        """
-        LOGIN = "1", "Login issue"
-        REPORT_POST = "2", "Report a post"
-        GENERAL = "3", "General Enquiry"
-        DELETE_ACCOUNT = "4", "Delete Account"
+    REASON_CHOICES = [
+        ('LOGIN', 'Login issue'),
+        ('REPORT_POST', 'Report a post'),
+        ('GENERAL', 'General Enquiry'),
+        ('DELETE_ACCOUNT', 'Delete Account'),
+    ]
 
     reason = models.CharField(
-        max_length=2,
-        choices=Reason.choices,
-        default=Reason.GENERAL
+        max_length=255,
+        choices=REASON_CHOICES,
+        default='GENERAL'
     )
     name = models.CharField(
         max_length=50
-        )
+    )
     email = models.EmailField(
         max_length=70
-        )
+    )
     message = models.TextField(
         max_length=500
-        )
+    )
     message_date = models.DateTimeField(
         auto_now=True
-        )
+    )
 
     class Meta:
         verbose_name = 'Message'
