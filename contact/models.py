@@ -25,16 +25,20 @@ class Contact(models.Model):
         default='GENERAL'
     )
     name = models.CharField(
-        max_length=50
+        max_length=50,
+        blank=False, null=False
     )
     email = models.EmailField(
-        max_length=70
+        max_length=70,
+        blank=False, null=False
     )
     message = models.TextField(
-        max_length=500
+        max_length=500,
+        blank=False, null=False
     )
     message_date = models.DateTimeField(
-        auto_now=True
+        auto_now=True,
+        blank=False, null=False
     )
 
     class Meta:
