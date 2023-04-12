@@ -17,7 +17,6 @@ class ContactSerializer(serializers.ModelSerializer):
     email = serializers.ReadOnlyField()
     message = serializers.ReadOnlyField()
 
-
     class Meta:
         model = Contact
         fields = [

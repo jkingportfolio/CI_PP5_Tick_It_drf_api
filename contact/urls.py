@@ -6,12 +6,12 @@ A module for urls in the contact app
 # 3rd Party
 from django.urls import path
 # Internal
-from . import views
+from .views import ContactCreateAPIView
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 app_name = 'contact'
 
 urlpatterns = [
-    path('contact/', views.contact, name='contact'),
+    path('contact/', ContactCreateAPIView.as_view(), name='contact-create'),
     ]
