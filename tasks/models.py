@@ -46,7 +46,7 @@ class Task(models.Model):
                              null=True)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['-id']
 
     def __str__(self):
         """
