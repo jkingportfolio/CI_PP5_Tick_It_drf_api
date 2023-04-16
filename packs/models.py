@@ -17,7 +17,6 @@ class Pack(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255, blank=False, null=False)
     pack_description = models.TextField(blank=False, null=False)
-    members = models.ManyToManyField(User, related_name='members')
     updated_on = models.DateTimeField(auto_now=True)
     tasks = models.ForeignKey("tasks.Task", on_delete=models.CASCADE,
                               related_name="task")
