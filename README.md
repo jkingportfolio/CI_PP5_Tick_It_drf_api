@@ -4,7 +4,7 @@
 
 💻 [Live link](https://tick-it-pp5.herokuapp.com/)
 
-This repository contains the API set up using Django REST Framework for the Tick It front-end application ([repository here](https://github.com/jkingportfolio/ci_pp5_tick_it_react) and [live website here](https://tick-it-app-pp5.herokuapp.com/)
+This repository contains the API set up using Django REST Framework for the Tick It front-end application ([repository here](https://github.com/jkingportfolio/ci_pp5_tick_it_react) and [live website here](https://tick-it-app-pp5.herokuapp.com/))
 
 ## Table of Contents
   - [User Stories](#user-stories)
@@ -23,44 +23,47 @@ The back-end section of the project focuses on its administration side and cover
 ## Database
 
 The following models were created to represent the database model structure of the application:
-<img src="docs/readme/database-diagram.png">
+<img src="docs/readme/project_models.png">
 
 #### User Model
 
 - The User model contains information about the user. It is part of the Django allauth library.
-- One-to-one relation with 
-- ForeignKey relation with 
+- One-to-one relation with the Profile model owner field
+- ForeignKey relation with the Task model owner
+- ForeignKey relation with the Pack model owner
+- ForeignKey relation with the Comment model owner
+- ForeignKey relation with the Watch model owner
 
 
 #### Profile Model
 
-- The Profile model contains the following fields: owner, xx, xx and xxx
-- One-to-one relation between the xx and xx
+- The Profile model contains the following fields: owner, name, job_role, created_on, updated_on and an image
+- One-to-one relation between the owner field and User id field
 
 #### Task Model
 
-- The Task model contains the following fields: owner, xx, xx and xx
-- ForeignKey relation with the xx
-- ForeignKey relation with the xx
+- The Task model contains the following fields: owner, created_on, title, task_body, updated_on, priority, due_date, assigned_to, completed and pack.
+- ForeignKey relation with the owner field
+- ForeignKey relation with the assigned_to field
+- ForeignKey relation with the pack field
 
 #### Watch Model
 
-- The Watch model contains the following fields: owner, xx and xx
-- ForeignKey relation between the xx and xx
-- ForeignKey relation between the xx and xx
+- The Watch model contains the following fields: owner, task and created_on
+- ForeignKey relation between the owner field and the User id field
+- ForeignKey relation between the task field and the Task id field
 
 #### Comment Model
 
-- The Comment model contains the following fields: xx, xx and xx
-- ForeignKey relation between the xx and xx
-- ForeignKey relation between the xx and xx
+- The Comment model contains the following fields: owner, task, created_on, updated_on and comment_body
+- ForeignKey relation between the ownner and User id field
+- ForeignKey relation between the task and Task id field
 
 #### Pack Model
 
-- The Pack model contains the following fields: xx, xx and xx
-- ForeignKey relation between to the xx and xx
-- ForeignKey relation between the xx and xx
-- ForeignKey relation between the xx and xx
+- The Pack model contains the following fields: owner, created_on, title, pack_description, updated_on and tasks
+- ForeignKey relation between to owner and User id field
+- ForeignKey relation between the tasks and Task id field
 
 ##### Back to [top](#table-of-contents)
 

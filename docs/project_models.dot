@@ -1,6 +1,6 @@
 digraph model_graph {
   // Dotfile by Django-Extensions graph_models
-  // Created: 2023-04-16 12:03
+  // Created: 2023-04-16 12:28
   // Cli Options: --all-applications --output project_models.dot
 
   fontname = "Roboto"
@@ -964,14 +964,6 @@ digraph model_graph {
   
   
     <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT COLOR="#7B7B7B" FACE="Roboto">files</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT COLOR="#7B7B7B" FACE="Roboto">FileField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
     <FONT FACE="Roboto">priority</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">CharField</FONT>
@@ -1353,9 +1345,6 @@ digraph model_graph {
 
   packs_models_Pack -> tasks_models_Task
   [label=" tasks (task)"] [arrowhead=none, arrowtail=dot, dir=both];
-
-  packs_models_Pack -> django_contrib_auth_models_User
-  [label=" members (members)"] [arrowhead=dot arrowtail=dot, dir=both];
 
 
 
