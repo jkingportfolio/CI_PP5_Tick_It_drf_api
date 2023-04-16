@@ -49,7 +49,6 @@ class TaskSerializer(serializers.ModelSerializer):
             'updated_on',
             'priority',
             'due_date',
-            'files',
             'assigned_to',
             'completed',
             'pack',

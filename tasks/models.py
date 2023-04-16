@@ -34,7 +34,6 @@ class Task(models.Model):
                                 choices=PRIORITY_CHOICES,
                                 default='LOW')
     due_date = models.DateField(blank=True, null=True)
-    files = models.FileField(blank=True)
     assigned_to = models.ForeignKey(User, blank=True,
                                     null=True,
                                     on_delete=models.SET_NULL,
