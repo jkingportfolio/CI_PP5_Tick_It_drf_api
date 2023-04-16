@@ -95,9 +95,9 @@ The following models were created to represent the database model structure of t
 
 ### Python Validation
 
-PEP8 was unavailable so used pycodestyle etc
+PEP8 was unavailable at the time of creating this project so pycodestyle was used instead to continually check all Python code for errors and warnings.
 
-[Pycodestyle](LINK) - Description
+[Pycodestyle](https://pypi.org/project/pycodestyle/) - Description
 
 
 ## Testing
