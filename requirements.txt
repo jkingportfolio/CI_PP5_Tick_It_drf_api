@@ -6,12 +6,13 @@ Django==3.2.18
 django-allauth==0.52.0
 django-cloudinary-storage==0.3.0
 django-cors-headers==3.14.0
+django-extensions==3.2.1
 django-filter==22.1
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
+graphviz==0.20.1
 gunicorn==20.1.0
 oauthlib==3.2.2
-Pillow==9.4.0
 psycopg2==2.9.5
 PyJWT==2.6.0
 python3-openid==3.2.0
