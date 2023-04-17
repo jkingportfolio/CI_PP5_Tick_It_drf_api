@@ -37,15 +37,14 @@ class PackSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        """
-        Handle possible duplication
-        """
-        try:
-            return super().create(validated_data)
-        except IntegrityError:
-            raise serializers.ValidationError({
-                'detail': 'possible duplication'
-            })
+        tasks_data = validated_data.pop('tasks')
+        pack = Pack.objects.create(**validated_data)
+
+        for task in tasks_data:
+            task, _ = Task.objects.get(id=task['id'])
+            pack.tasks.add(task)
+
+        return pack
 
 
 class PackDetailSerializer(PackSerializer):
