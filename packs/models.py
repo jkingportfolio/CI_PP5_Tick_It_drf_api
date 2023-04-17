@@ -18,8 +18,7 @@ class Pack(models.Model):
     title = models.CharField(max_length=255, blank=False, null=False)
     pack_description = models.TextField(blank=False, null=False)
     updated_on = models.DateTimeField(auto_now=True)
-    tasks = models.ForeignKey("tasks.Task", on_delete=models.CASCADE,
-                              related_name="task")
+    tasks = models.ManyToManyField("tasks.Task", related_name="task")
 
     class Meta:
         ordering = ['-created_on']
