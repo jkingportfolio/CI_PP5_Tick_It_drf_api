@@ -5,54 +5,18 @@ from rest_framework import serializers
 
 # Internal:
 from .models import Pack
-from tasks.serializers import TaskSerializer
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-# class PackSerializer(serializers.ModelSerializer):
-#     """
-#     A class for a PackSerializer
-#     """
-#     owner = serializers.ReadOnlyField(source='owner.username')
-#     is_owner = serializers.SerializerMethodField()
-#     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-#     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
-
-#     def get_is_owner(self, obj):
-#         request = self.context['request']
-#         return request.user == obj.owner
-
-#     class Meta:
-#         model = Pack
-#         fields = [
-#             'id',
-#             'is_owner',
-#             'owner',
-#             'created_on',
-#             'title',
-#             'pack_description',
-#             'updated_on',
-#             'tasks',
-#             'profile_id',
-#             'profile_image',
-#         ]
-
-#     def create(self, validated_data):
-#         tasks_data = validated_data.pop('tasks')
-#         pack = Pack.objects.create(**validated_data)
-
-#         for task_data in tasks_data:
-#             task, _ = Task.objects.get(id=task_data['id'])
-#             pack.tasks.add(task)
-
-#         return pack
-
 class PackSerializer(serializers.ModelSerializer):
+    """
+    A class for a PackSerializer
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
-    tasks = TaskSerializer(many=True, required=False)
+    tasks = serializers.PrimaryKeyRelatedField(many=True)
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -77,9 +41,12 @@ class PackSerializer(serializers.ModelSerializer):
         tasks_data = validated_data.pop('tasks', [])
         pack = Pack.objects.create(**validated_data)
 
-        for task_data in tasks_data:
-            task = Task.objects.create(**task_data)
+        for task_id in tasks_data:
+            task = Task.objects.get(id=task_id)
             pack.tasks.add(task)
+
+        return pack
+
 
         return pack
 
