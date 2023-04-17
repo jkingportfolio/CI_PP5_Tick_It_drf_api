@@ -36,15 +36,19 @@ class PackSerializer(serializers.ModelSerializer):
             'profile_image',
         ]
 
-    def create(self, validated_data):
-        tasks_data = validated_data.pop('tasks')
-        pack = Pack.objects.create(**validated_data)
+    # def create(self, validated_data):
+    #     tasks_data = validated_data.pop('tasks')
+    #     pack = Pack.objects.create(**validated_data)
 
-        for task_data in tasks_data:
-            task, _ = Task.objects.get(id=task_data['id'])
-            pack.tasks.add(task)
+    #     for task_data in tasks_data:
+    #         task, _ = Task.objects.get(id=task_data['id'])
+    #         pack.tasks.add(task)
 
-        return pack
+    #     return pack
+
+    def create(self, serializer):
+        tasks = json.loads(self.request.data.get('tasks')) # Deserialize list from JSON string
+        serializer.save(user=self.request.user, tasks=tasks)
 
 
 class PackDetailSerializer(PackSerializer):
