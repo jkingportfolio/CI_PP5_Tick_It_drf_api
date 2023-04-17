@@ -9,15 +9,15 @@ from tasks.serializers import TaskSerializer
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+from rest_framework import serializers
+from tasks.models import Task
+from .models import Pack
+
 class PackSerializer(serializers.ModelSerializer):
-    """
-    A class for a PackSerializer
-    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
-    tasks = TaskSerializer(many=True)
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -37,15 +37,14 @@ class PackSerializer(serializers.ModelSerializer):
             'profile_id',
             'profile_image',
         ]
-
+    
     def create(self, validated_data):
-     
         tasks_data = validated_data.pop('tasks', [])
         pack = Pack.objects.create(**validated_data)
 
         for task_id in tasks_data:
             task = Task.objects.get(id=task_id)
-            pack.tasks.create(**validated_data)
+            pack.tasks.add(task)
 
         return pack
 
