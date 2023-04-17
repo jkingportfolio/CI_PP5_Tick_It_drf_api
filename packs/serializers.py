@@ -6,22 +6,17 @@ from rest_framework import serializers
 # Internal:
 from .models import Pack
 from tasks.serializers import TaskSerializer
+from tasks.models import Task
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-from rest_framework import serializers
-from tasks.models import Task
-from .models import Pack
 
 class PackSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
-
-    def get_is_owner(self, obj):
-        request = self.context['request']
-        return request.user == obj.owner
+    tasks = serializers.PrimaryKeyRelatedField(
+        queryset=Task.objects.all(), many=True)
 
     class Meta:
         model = Pack
@@ -37,15 +32,15 @@ class PackSerializer(serializers.ModelSerializer):
             'profile_id',
             'profile_image',
         ]
-    
+
+    def get_is_owner(self, obj):
+        request = self.context['request']
+        return request.user == obj.owner
+
     def create(self, validated_data):
-        tasks_data = validated_data.pop('tasks', [])
+        tasks = validated_data.pop('tasks')
         pack = Pack.objects.create(**validated_data)
-
-        for task_id in tasks_data:
-            task = Task.objects.get(id=task_id)
-            pack.tasks.add(task)
-
+        pack.tasks.set(tasks)
         return pack
 
 
