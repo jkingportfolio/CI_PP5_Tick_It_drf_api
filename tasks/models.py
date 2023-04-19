@@ -20,7 +20,7 @@ class Task(models.Model):
     ]
 
     COMPLETION_STATUS = [
-        ('NO', 'No'),
+        ('NOT-STARTED', 'Not started'),
         ('IN-PROGRESS', 'In-progress'),
         ('COMPLETE', 'Complete'),
     ]
@@ -40,7 +40,7 @@ class Task(models.Model):
                                     related_name='assigned_to')
     completed = models.CharField(max_length=255,
                                  choices=COMPLETION_STATUS,
-                                 default='NO')
+                                 default='NOT-STARTED')
     pack = models.ForeignKey(Pack, on_delete=models.CASCADE, blank=True,
                              null=True)
 
