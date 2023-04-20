@@ -51,4 +51,4 @@ class Task(models.Model):
         """
         Return information of the Task
         """
-        return f"Task: #{self.id}"
+        return f"Task: #{self.title}"

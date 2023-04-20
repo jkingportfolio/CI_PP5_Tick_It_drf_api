@@ -124,61 +124,131 @@ In addition, tasks, comments, packs and watches can be created by logged-in user
 
 <details><summary>Screenshots - USER</summary>
     <details><summary>Create user</summary>
-    <img src="docs/testing/user-create-test.png">
-    </details>
-    <details><summary>Change user permissions</summary>
-    <img src="docs/testing/user-change-permissions-test.png">
+    <img src="docs/testing/user-create-test-1.png">
+    <br>
+    <img src="docs/testing/user-create-test-2.png">
+    <br>
+    <img src="docs/testing/user-create-test-3.png">
+    <br>
     </details>
 </details>
 
 <details><summary>Screenshots - PROFILE</summary>
     <details><summary>Update profile</summary>
-    <img src="docs/testing/profile-update-test.png">
+    <img src="docs/testing/profile-update-test-1.png">
+    <br>
+    <img src="docs/testing/profile-update-test-2.png">
+    <br>
+    <img src="docs/testing/profile-update-test-3.png">
+    <br>
     </details>
-        <details><summary>Delete profile</summary>
-    <img src="docs/testing/profile-delete-test.png">
+    <details><summary>Delete profile</summary>
+    <img src="docs/testing/profile-delete-test-1.png">
+    <br>
+    <img src="docs/testing/profile-delete-test-2.png">
+    <br>
+    <img src="docs/testing/profile-delete-test-3.png">
+    <br>
+    <img src="docs/testing/profile-delete-test-4.png">
+    <br>
     </details>
 </details>
 
 <details><summary>Screenshots - TASK</summary>
     <details><summary>Create task</summary>
-    <img src="docs/testing/task-create-test.png">
+    <img src="docs/testing/task-create-test-1.png">
+    <br>
+    <img src="docs/testing/task-create-test-2.png">
+    <br>
+    <img src="docs/testing/task-create-test-3.png">
+    <br>
     </details>
     <details><summary>Update task</summary>
-    <img src="docs/testing/task-update-test.png">
+    <img src="docs/testing/task-edit-test-1.png">
+    <br>
+    <img src="docs/testing/task-edit-test-2.png">
+    <br>
     </details>
     <details><summary>Delete task</summary>
-    <img src="docs/testing/task-delete-test.png">
+    <img src="docs/testing/task-delete-test-1.png">
+    <br>
+    <img src="docs/testing/task-delete-test-2.png">
+    <br>
+    <img src="docs/testing/task-delete-test-3.png">
+    <br>
     </details>
 </details>
 
 <details><summary>Screenshots - COMMENT</summary>
     <details><summary>Create comment</summary>
-    <img src="docs/testing/comment-create-test.png">
+    <img src="docs/testing/comment-create-test-1.png">
+    <br>
+    <img src="docs/testing/comment-create-test-2.png">
+    <br>
+    <img src="docs/testing/comment-create-test-3.png">
+    <br>
     </details>
     <details><summary>Update comment</summary>
-    <img src="docs/testing/comment-update-test.png">
+    <img src="docs/testing/comment-edit-test-1.png">
+    <br>
+    <img src="docs/testing/comment-edit-test-2.png">
+    <br>
+    <img src="docs/testing/comment-edit-test-3.png">
+    v
     </details>
     <details><summary>Delete comment</summary>
-    <img src="docs/testing/comment-delete-test.png">
+    <img src="docs/testing/comment-delete-test-1.png">
+    <br>
+    <img src="docs/testing/comment-delete-test-2.png">
+    <br>
+    <img src="docs/testing/comment-delete-test-3.png">
+    <br>
     </details>
 </details>
 
 <details><summary>Screenshots - PACK</summary>
     <details><summary>Create pack</summary>
-    <img src="docs/testing/pack-create-test.png">
+    <img src="docs/testing/pack-create-test-1.png">
+    <br>
+    <img src="docs/testing/pack-create-test-2.png">
+    <br>
+    <img src="docs/testing/pack-create-test-3.png">
+    <br>
     </details>
-    <details><summary>Delete pack</summary>
-    <img src="docs/testing/pack-delete-test.png">
+    <details><summary>Edit pack - DJANGO ADMIN</summary>
+    <img src="docs/testing/pack-edit-test-1.png">
+    <br>
+    <img src="docs/testing/pack-edit-test-2.png">
+    <br>
+    <img src="docs/testing/pack-edit-test-3.png">
+    <br>
+    </details>
+    <details><summary>Delete pack - DJANGO ADMIN</summary>
+    <img src="docs/testing/pack-delete-test-1.png">
+    <br>
+    <img src="docs/testing/pack-delete-test-2.png">
+    <br>
+    <img src="docs/testing/pack-delete-test-3.png">
+    <br>
+    <img src="docs/testing/pack-delete-test-4.png">
+    <br>
     </details>
 </details>
 
 <details><summary>Screenshots - WATCH</summary>
     <details><summary>Create - Watch Task</summary>
-    <img src="docs/testing/watch-create-test.png">
+    <img src="docs/testing/watch-create-test-1.png">
+    <br>
+    <img src="docs/testing/watch-create-test-2.png">
+    <br>
     </details>
-    <details><summary>Delete - UnWatch Task</summary>
-    <img src="docs/testing/watch-delete-test.png">
+    <details><summary>Delete - UnWatch Task - DJANGO ADMIN</summary>
+    <img src="docs/testing/watch-delete-test-1.png">
+    <br>
+    <img src="docs/testing/watch-delete-test-2.png">
+    <br>
+    <img src="docs/testing/watch-delete-test-3.png">
+    <br>
     </details>
 </details>
 
