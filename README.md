@@ -215,7 +215,7 @@ In addition, tasks, comments, packs and watches can be created by logged-in user
     <img src="docs/testing/pack-create-test-3.png">
     <br>
     </details>
-    <details><summary>Edit pack - DJANGO ADMIN</summary>
+    <details><summary>Edit pack</summary>
     <img src="docs/testing/pack-edit-test-1.png">
     <br>
     <img src="docs/testing/pack-edit-test-2.png">
@@ -223,14 +223,12 @@ In addition, tasks, comments, packs and watches can be created by logged-in user
     <img src="docs/testing/pack-edit-test-3.png">
     <br>
     </details>
-    <details><summary>Delete pack - DJANGO ADMIN</summary>
+    <details><summary>Delete pack</summary>
     <img src="docs/testing/pack-delete-test-1.png">
     <br>
     <img src="docs/testing/pack-delete-test-2.png">
     <br>
     <img src="docs/testing/pack-delete-test-3.png">
-    <br>
-    <img src="docs/testing/pack-delete-test-4.png">
     <br>
     </details>
 </details>
