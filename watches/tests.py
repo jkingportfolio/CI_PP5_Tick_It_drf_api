@@ -16,7 +16,8 @@ class WatchViewTests(APITestCase):
         """
         Automatically runs before every test method
         """
-        User.objects.create_user(username='api_test_user_1', password='password123')
+        User.objects.create_user(
+            username='api_test_user_1', password='password123')
 
     def test_not_logged_in_user_cannot_watch_task(self):
         """
@@ -31,8 +32,10 @@ class WatchDetailViewTests(APITestCase):
         """
         Contains two users, 3 tasks and 2 watches
         """
-        api_test_user_1 = User.objects.create_user(username='api_test_user_1', password='password123')
-        api_test_user_2 = User.objects.create_user(username='api_test_user_2', password='password123')
+        api_test_user_1 = User.objects.create_user(
+            username='api_test_user_1', password='password123')
+        api_test_user_2 = User.objects.create_user(
+            username='api_test_user_2', password='password123')
         Task.objects.create(
             owner=api_test_user_1, title='task title',
             task_body='test'

@@ -54,8 +54,9 @@ class CommentDetailViewTests(APITestCase):
         Test to ensure logged-in user can create a comment
         """
         self.client.login(username='api_test_user', password='password123')
-        response = self.client.post('/comments/', {'task': 1,
-                                                   'comment_body': 'a test comment'})
+        response = self.client.post('/comments/',
+                                    {'task': 1,
+                                     'comment_body': 'a test comment'})
         comment_count = Comment.objects.count()
         self.assertEqual(comment_count, 3)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
