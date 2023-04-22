@@ -30,7 +30,7 @@ class CommentTests(APITestCase):
 class CommentDetailViewTests(APITestCase):
     def setUp(self):
         """
-        Contains two users with post and comments for each
+        Contains two users with task and comments for each
         """
         api_test_user = User.objects.create_user(
             username='api_test_user', password='password123')
@@ -62,7 +62,7 @@ class CommentDetailViewTests(APITestCase):
 
     def test_retrieve_comment(self):
         """
-        Test if possible to retrieve a comment which exists (has a valid ID)
+        Test if possible to retrieve a comment which exists
         """
         self.client.login(username='api_test_user', password='password123')
         response = self.client.get('/comments/1/')
@@ -73,7 +73,6 @@ class CommentDetailViewTests(APITestCase):
     def test_retrieve_non_existing_comment(self):
         """
         Test if possible to retrieve a comment which does not exist
-        (no valid ID)
         """
         self.client.login(username='api_test_user', password='password123')
         response = self.client.get('/comments/9999/')
