@@ -267,7 +267,7 @@ Automated testing was done using the Django Rest Framework APITestCase. The repo
 </details>
 
 <details><summary>Detailed coverage report</summary>
-<img src="docs/testing/coverage-report-tickit.jpg">
+<img src="docs/testing/coverage-report-tickit.png">
 </details>
 
 ##### Back to [top](#table-of-contents)
