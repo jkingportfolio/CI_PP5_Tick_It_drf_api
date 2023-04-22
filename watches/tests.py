@@ -18,9 +18,9 @@ class WatchViewTests(APITestCase):
         """
         User.objects.create_user(username='api_test_user_1', password='password123')
 
-    def test_not_logged_in_user_cannot_like_post(self):
+    def test_not_logged_in_user_cannot_watch_task(self):
         """
-        Test to ensure not logged-in user cannot watch task
+        Test to ensure unauth user cannot watch task
         """
         response = self.client.post('/watches/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
@@ -64,9 +64,9 @@ class WatchDetailViewTests(APITestCase):
         response = self.client.get('/watches/1/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_user_cannot_retrieve_non_existing_like(self):
+    def test_user_cannot_retrieve_non_existing_watch(self):
         """
-        Test if possible to retrieve a like with no ID
+        Test if possible to retrieve a watch with no ID
         """
         self.client.login(username='api_test_user_1', password='password123')
         response = self.client.get('/watches/999/')
