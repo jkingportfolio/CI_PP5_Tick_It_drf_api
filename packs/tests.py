@@ -62,9 +62,10 @@ class PackDetailViewTests(APITestCase):
         """
         Test to ensure logged-in user can create a pack
         """
-        self.client.login(username='api_test_user_1', password='password123')
-        response = self.client.post('/packs/', {'title': 'My Pack', 'tasks': 1})
-        print(response.status_code)
+        self.client.force_authenticate(
+            user=User.objects.get(username='api_test_user_1'))
+        response = self.client.post(
+            '/packs/', {'title': 'My Pack', 'tasks': [1, 2]})
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_user_can_retrieve_existing_pack(self):

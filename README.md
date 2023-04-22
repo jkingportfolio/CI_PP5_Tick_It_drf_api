@@ -257,7 +257,14 @@ Automated testing was done using the Django Rest Framework APITestCase. The repo
 
 - Tests summary
 
-<img src="docs/testing/apitestcase-tickit.png">
+<details><summary>Detailed coverage report</summary>
+<img src="docs/testing/automated_test_comments.png">
+<img src="docs/testing/automated_test_contact.png">
+<img src="docs/testing/automated_test_profiles.png">
+<img src="docs/testing/automated_test_tasks.png">
+<img src="docs/testing/automated_test_watches.png">
+<img src="docs/testing/automated_test_packs.png">
+</details>
 
 <details><summary>Detailed coverage report</summary>
 <img src="docs/testing/coverage-report-tickit.jpg">
