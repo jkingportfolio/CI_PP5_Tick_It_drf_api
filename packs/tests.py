@@ -77,7 +77,7 @@ class PackDetailViewTests(APITestCase):
 
     def test_user_cannot_retrieve_non_existing_pack(self):
         """
-        Test if possible to retrieve a following with no ID
+        Test if possible to retrieve a pack with no ID
         """
         self.client.login(username='api_test_user_1', password='password123')
         response = self.client.get('/packs/999/')
@@ -85,7 +85,7 @@ class PackDetailViewTests(APITestCase):
 
     def test_user_can_delete_owned_pack(self):
         """
-        Test if user can unfollow user
+        Test if user can delete owned pack
         """
         self.client.login(username='api_test_user_1', password='password123')
         response = self.client.delete('/packs/1/')
@@ -99,3 +99,11 @@ class PackDetailViewTests(APITestCase):
         response = self.client.delete('/pack/2/')
         print(response.status_code)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def tearDown(self):
+        """
+        Automatically runs after every test method
+        """
+        Pack.objects.all().delete()
+        Task.objects.all().delete()
+        User.objects.all().delete()
