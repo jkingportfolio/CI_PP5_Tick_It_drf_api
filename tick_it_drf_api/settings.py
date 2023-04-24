@@ -68,7 +68,7 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
 
 # Application definition
 
@@ -146,7 +146,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tick_it_drf_api.wsgi.application'
 
-Live site database
+#Live site database
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }

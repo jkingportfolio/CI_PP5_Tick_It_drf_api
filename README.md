@@ -253,11 +253,11 @@ In addition, tasks, comments, packs and watches can be created by logged-in user
 
 ### Automated testing
 
-Automated testing was done using the Django Rest Framework APITestCase. The report of overall testing was produced using the coverage tool (```$ coverage report``` & ```$ coverage html``` commands)
+Automated testing was done using the Django Rest Framework APITestCase.
 
 - Tests summary
 
-<details><summary>Detailed coverage report</summary>
+<details><summary>Individual app report</summary>
 <img src="docs/testing/automated_test_comments.png">
 <img src="docs/testing/automated_test_contact.png">
 <img src="docs/testing/automated_test_profiles.png">
@@ -266,9 +266,10 @@ Automated testing was done using the Django Rest Framework APITestCase. The repo
 <img src="docs/testing/automated_test_packs.png">
 </details>
 
-<details><summary>Detailed coverage report</summary>
-<img src="docs/testing/coverage-report-tickit.png">
+<details><summary>Combined report</summary>
+<img src="docs/testing/automated_test_complete.png">
 </details>
+
 
 ##### Back to [top](#table-of-contents)
 
