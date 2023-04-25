@@ -1,3 +1,6 @@
+"""
+A module for urls in the comments app
+"""
 # Imports
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:

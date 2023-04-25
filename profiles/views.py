@@ -17,7 +17,7 @@ from tick_it_drf_api.permissions import IsOwnerOrReadOnly
 
 class ProfileList(generics.ListAPIView):
     """
-    List all profiles
+    A class to list all profiles
     No Create view (post method), as profile creation
     handled by django signals
     """
@@ -45,6 +45,9 @@ class ProfileList(generics.ListAPIView):
 
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    A class for a profile detail.
+    """
     serializer_class = ProfileSerializer
     permission_classes = [IsOwnerOrReadOnly]
 
@@ -59,6 +62,9 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class UserList(APIView):
+    """
+    A class to list all site users.
+    """
     def get(self, request):
         users = User.objects.all().values()
         return Response(users)

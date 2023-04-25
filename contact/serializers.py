@@ -12,11 +12,6 @@ class ContactSerializer(serializers.ModelSerializer):
     """
     A class for a ContactSerializer
     """
-    # reason = serializers.ReadOnlyField()
-    # name = serializers.ReadOnlyField()
-    # email = serializers.ReadOnlyField()
-    # message = serializers.ReadOnlyField()
-
     class Meta:
         model = Contact
         fields = '__all__'

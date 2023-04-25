@@ -61,7 +61,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
@@ -146,7 +146,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tick_it_drf_api.wsgi.application'
 
-#Live site database
+# Live site database
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }

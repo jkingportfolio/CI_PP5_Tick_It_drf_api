@@ -14,27 +14,8 @@ from .serializers import ContactSerializer
 
 
 class ContactCreateAPIView(generics.CreateAPIView):
+    """
+    A class to list contact messages.
+    """
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-
-    # def contact(request):
-    #     """
-    #     A function based view for the contact page with form to get
-    #     contact details and reason for contacting
-    #     """
-    #     contact_form = ContactForm()
-    #     form_submit = False
-    #     if request.method == 'POST':
-    #         contact_form = ContactForm(request.POST)
-    #         if contact_form.is_valid():
-    #             contact_form.save()
-    #             messages.success(request, 'Thank you for your message!'
-    #                              ' We will be in touch soon!')
-    #             form_submit = True
-    #             return redirect('dashboard')
-    #     else:
-    #         contact_form = ContactForm()
-    #         context = {
-    #             'contact_form': contact_form,
-    #         }
-    #     return render(request, 'contact/contact.html', context)

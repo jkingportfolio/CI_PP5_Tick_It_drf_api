@@ -1,3 +1,6 @@
+"""
+A module for urls in the tasks app
+"""
 # Imports
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:

@@ -1,3 +1,6 @@
+"""
+A module for urls in the profiles app
+"""
 # Imports
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:

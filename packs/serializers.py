@@ -11,6 +11,9 @@ from tasks.models import Task
 
 
 class PackSerializer(serializers.ModelSerializer):
+    """
+    A class for a PackSerializer
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')

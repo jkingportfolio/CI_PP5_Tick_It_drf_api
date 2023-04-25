@@ -14,6 +14,9 @@ from tick_it_drf_api.permissions import IsOwnerOrReadOnly
 
 
 class TaskList(generics.ListCreateAPIView):
+    """
+    A class to list tasks.
+    """
     serializer_class = TaskSerializer
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
@@ -50,6 +53,9 @@ class TaskList(generics.ListCreateAPIView):
 
 
 class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    A class to display a task detail.
+    """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = TaskSerializer
 
