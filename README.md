@@ -194,7 +194,6 @@ In addition, tasks, comments, packs and watches can be created by logged-in user
     <img src="docs/testing/manual/comment-edit-test-2.png">
     <br>
     <img src="docs/testing/manual/comment-edit-test-3.png">
-    v
     </details>
     <details><summary>Delete comment</summary>
     <img src="docs/testing/manual/comment-delete-test-1.png">
