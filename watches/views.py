@@ -22,7 +22,6 @@ class WatchList(generics.ListCreateAPIView):
     queryset = Watch.objects.all()
 
     def perform_create(self, serializer):
-        # owner is the user making the request
         serializer.save(owner=self.request.user)
 
 

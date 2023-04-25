@@ -20,8 +20,6 @@ def home(request):
         'message': "Hello, welcome to Tick It Django REST Framework API"
     })
 
-# dj-rest-auth logout view fix
-
 
 @api_view(['POST'])
 def logout_route(request):
