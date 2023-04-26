@@ -63,7 +63,12 @@ The following models were created to represent the database model structure of t
 
 - The Pack model contains the following fields: owner, created_on, title, pack_description, updated_on and tasks
 - ForeignKey relation between to owner and User id field
-- ForeignKey relation between the tasks and Task id field
+- ManyToMany relation between the tasks and Task id field
+
+#### Contact Model
+
+- The Contact model contains the following fields: reason, name, email, message and
+message date
 
 ##### Back to [top](#table-of-contents)
 
