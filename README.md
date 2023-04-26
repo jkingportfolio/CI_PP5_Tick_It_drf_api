@@ -100,9 +100,7 @@ message date
 
 ### Python Validation
 
-PEP8 was unavailable at the time of creating this project so pycodestyle was used instead to continually check all Python code for errors and warnings.
-
-[Pycodestyle](https://pypi.org/project/pycodestyle/) - Description
+PEP8 was unavailable at the time of creating this project so [Pycodestyle](https://pypi.org/project/pycodestyle/) was used instead to continually check all Python code for errors and warnings.
 
 
 ## Testing
