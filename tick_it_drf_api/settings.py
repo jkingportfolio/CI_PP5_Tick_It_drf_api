@@ -151,7 +151,7 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-# Database used to running API Testings
+# Database used for running API Testings
 # DATABASES = {
 #     'default': ({
 #         'ENGINE': 'django.db.backends.sqlite3',
