@@ -122,6 +122,7 @@ Task | Create, update & delete | A Task can be created, edited or deleted | Work
 Comment | Create, update & delete | A comment can be created, edited or deleted | Works as expected
 Watch | Create & delete |  A Watch relationship between a Task and a User can be created or deleted | Works as expected
 Pack | Create & delete | A Pack can be created, edited or deleted | Works as expected
+Contact | Create & delete | A Contact message can be created or deleted | Works as expected
 
 In addition, tasks, comments, packs and watches can be created by logged-in users only. Users can only update or delete the content which was created by themselves.
 
