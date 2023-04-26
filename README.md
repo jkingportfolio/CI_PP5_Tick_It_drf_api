@@ -243,12 +243,31 @@ In addition, tasks, comments, packs and watches can be created by logged-in user
     <img src="docs/testing/manual/watch-create-test-2.png">
     <br>
     </details>
-    <details><summary>Delete - UnWatch Task - DJANGO ADMIN</summary>
+    <details><summary>Delete - UnWatch Task</summary>
     <img src="docs/testing/manual/watch-delete-test-1.png">
     <br>
     <img src="docs/testing/manual/watch-delete-test-2.png">
     <br>
     <img src="docs/testing/manual/watch-delete-test-3.png">
+    <br>
+    </details>
+</details>
+
+<details><summary>Screenshots - Contact</summary>
+    <details><summary>Create - Contact message</summary>
+    <img src="docs/testing/manual/contact-create-test-1.png">
+    <br>
+    <img src="docs/testing/manual/contact-create-test-2.png">
+    <br>
+    </details>
+    <details><summary>Delete - Contact message (superuser only)</summary>
+    <img src="docs/testing/manual/contact-delete-test-1.png">
+    <br>
+    <img src="docs/testing/manual/contact-delete-test-2.png">
+    <br>
+    <img src="docs/testing/manual/contact-delete-test-3.png">
+    <br>
+    <img src="docs/testing/manual/contact-delete-test-4.png">
     <br>
     </details>
 </details>
